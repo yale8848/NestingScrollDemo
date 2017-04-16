@@ -72,7 +72,9 @@ public class EventDispatchPlanLayout extends ViewGroup {
         mTargetCurrentOffset = mTargetInitOffset;
         array.recycle();
 
+
         //ViewCompat.setChildrenDrawingOrderEnabled(this, true);
+
 
         final ViewConfiguration vc = ViewConfiguration.get(getContext());
         mMaxVelocity = vc.getScaledMaximumFlingVelocity();
@@ -176,7 +178,9 @@ public class EventDispatchPlanLayout extends ViewGroup {
         final int action = MotionEventCompat.getActionMasked(ev);
         int pointerIndex;
 
+
         Log.d(TAG,"onInterceptTouchEvent "+action+" mTarget.canChildScrollUp "+mTarget.canChildScrollUp());
+
         if (!isEnabled() || mTarget.canChildScrollUp()) {
             Log.d(TAG, "fast end onIntercept: isEnabled = " + isEnabled() + "; canChildScrollUp = "
                     + mTarget.canChildScrollUp());
@@ -222,7 +226,9 @@ public class EventDispatchPlanLayout extends ViewGroup {
     public boolean onTouchEvent(MotionEvent ev) {
         final int action = MotionEventCompat.getActionMasked(ev);
         int pointerIndex;
+
         Log.d(TAG,"onTouchEvent "+action);
+
         if (!isEnabled() || mTarget.canChildScrollUp()) {
             Log.d(TAG, "fast end onTouchEvent: isEnabled = " + isEnabled() + "; canChildScrollUp = "
                     + mTarget.canChildScrollUp());
